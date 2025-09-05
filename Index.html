@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Empresa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <style>
+        /* Estilos generales de la página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding-top: 60px; /* Espacio para el menú fijo */
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Estilos del menú de navegación fijo */
+        .navbar {
+            position: fixed; /* Hace que el menú se quede fijo */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .logo {
+            font-size: 1.5em;
+        }
+
+        /* Estilos de las secciones */
+        .section {
+            padding: 60px 20px;
+            min-height: 80vh; /* Altura para poder hacer scroll */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #vision {
+            background-color: #fff;
+        }
+
+        #mision {
+            background-color: #e2e2e2;
+        }
+
+        #carrito-section {
+            background-color: #fff;
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Estilos del botón de WhatsApp flotante */
+        .whatsapp-button {
+            position: fixed; /* Lo mantiene en un lugar fijo */
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1); /* Efecto de crecimiento al pasar el cursor */
+        }
+        
+        /* Estilos del carrito de compras */
+        .cart-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 250px;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .product-item h3 {
+            margin: 10px 0;
+        }
+
+        .product-item button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-item button:hover {
+            background-color: #0056b3;
+        }
+
+        .cart-summary {
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 2px solid #ddd;
+        }
+        .cart-summary h3 {
+            font-size: 1.5em;
+        }
+        .cart-summary button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .cart-summary button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Mi Empresa</div>
+        <div>
+            <a href="#vision">Visión</a>
+            <a href="#mision">Misión</a>
+            <a href="#carrito-section">Carrito</a>
+        </div>
+    </nav>
+
+    <section id="vision" class="section">
+        <h2>Nuestra Visión</h2>
+        <p>Ser la empresa líder en soluciones tecnológicas innovadoras, transformando la vida de nuestros clientes y contribuyendo al desarrollo sostenible de la sociedad.</p>
+    </section>
+
+    <section id="mision" class="section">
+        <h2>Nuestra Misión</h2>
+        <p>Ofrecer productos y servicios de alta calidad, superando las expectativas de nuestros clientes a través de la excelencia operativa y el compromiso con la innovación constante.</p>
+    </section>
+
+    <section id="carrito-section" class="section">
+        <h2>Carrito de Compras</h2>
+        <div id="product-list" class="cart-container">
+            </div>
+        <div id="cart-summary" class="cart-summary">
+            <h3>Total: $<span id="cart-total">0.00</span></h3>
+            <button id="checkout-button">Pagar con Stripe</button>
+        </div>
+    </section>
+
+    <a href="https://wa.me/numerodetelefono" target="_blank" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Array de productos de ejemplo (será reemplazado por la API de Fake Store)
+        const products = [
+            { id: 1, name: 'Auriculares Bluetooth', price: 50, image: 'https://via.placeholder.com/250x200.png?text=Auriculares' },
+            { id: 2, name: 'Mouse Inalámbrico', price: 25, image: 'https://via.placeholder.com/250x200.png?text=Mouse' },
+            { id: 3, name: 'Teclado Mecánico', price: 80, image: 'https://via.placeholder.com/250x200.png?text=Teclado' },
+            { id: 4, name: 'Webcam HD', price: 60, image: 'https://via.placeholder.com/250x200.png?text=Webcam' }
+        ];
+
+        const productList = document.getElementById('product-list');
+        const cartTotalSpan = document.getElementById('cart-total');
+        const checkoutButton = document.getElementById('checkout-button');
+        let cart = [];
+
+        // Función para mostrar los productos
+        function displayProducts() {
+            productList.innerHTML = '';
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.classList.add('product-item');
+                productDiv.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>Precio: $${product.price}</p>
+                    <button onclick="addToCart(${product.id})">Agregar al carrito</button>
+                `;
+                productList.appendChild(productDiv);
+            });
+        }
+
+        // Función para agregar un producto al carrito
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                cart.push(product);
+                updateCartTotal();
+                alert(`"${product.name}" ha sido agregado al carrito.`);
+            }
+        }
+
+        // Función para actualizar el total del carrito
+        function updateCartTotal() {
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            cartTotalSpan.textContent = total.toFixed(2);
+        }
+
+        // Lógica de Stripe para el pago
+        checkoutButton.addEventListener('click', async () => {
+            // Verifica que haya productos en el carrito
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío. Por favor, agrega un producto para pagar.');
+                return;
+            }
+
+            // Aquí necesitas la clave pública de Stripe (Publishable Key)
+            const stripe = Stripe('TU_CLAVE_PUBLICA_DE_STRIPE');
+
+            // En una aplicación real, esta parte se conecta con un backend seguro (ej. Netlify Functions)
+            // para crear la sesión de pago de Stripe.
+            // Para este ejemplo, te redirigiremos a una página de prueba.
+            try {
+                // Simula el envío de datos al backend
+                const response = await fetch('https://TU_ENDPOINT_DE_PAGO.netlify.app/.netlify/functions/create-checkout-session', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ items: cart })
+                });
+
+                const session = await response.json();
+                
+                // Redirige al usuario a la página de pago de Stripe
+                const result = await stripe.redirectToCheckout({
+                    sessionId: session.id,
+                });
+
+                if (result.error) {
+                    alert(result.error.message);
+                }
+            } catch (error) {
+                console.error('Error al procesar el pago:', error);
+                alert('Hubo un error al procesar el pago. Intenta de nuevo.');
+            }
+        });
+
+        // Carga inicial de productos
+        window.onload = displayProducts;
+
+    </script>
+</body>
+</html>
