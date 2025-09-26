@@ -24,8 +24,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #333;
-            color: white;
+            background-color: #ADD8E6; /* Fondo azul claro */
+            color: black; /* Color del texto del logo */
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
@@ -33,17 +33,23 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             z-index: 1000;
         }
+        
+        /* Contenedor para los enlaces del menú */
+        .navbar-links {
+            display: flex;
+            gap: 15px; /* Espacio entre los enlaces */
+        }
 
-        .navbar a {
-            color: #8A2BE2; /* Enlaces y iconos en violeta */
+        .navbar-links a {
+            color: black; /* Color de los iconos y enlaces en negro */
             text-decoration: none;
             padding: 10px 15px;
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
 
-        .navbar a:hover {
-            background-color: #575757;
+        .navbar-links a:hover {
+            background-color: #87CEFA; /* Azul más oscuro al pasar el cursor */
             border-radius: 5px;
         }
 
@@ -223,7 +229,7 @@
 
     <nav class="navbar">
         <div class="logo">Irendoral</div>
-        <div>
+        <div class="navbar-links">
             <a href="#vision">Visión</a>
             <a href="#mision">Misión</a>
             <a href="#carrito-section">Carrito</a>
@@ -345,3 +351,4 @@
     </script>
 </body>
 </html>
+
