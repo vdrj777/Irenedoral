@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
-
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Irendoral</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <script src="https://js.stripe.com/v3/"></script>
-
     <style>
         /* Estilos generales de la página */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding-top: 60px; /* Espacio para el menú fijo */
-            background-color: #f4f4f4;
+            background-color: #E0F7E6; /* Fondo verde claro */
             color: #333;
             line-height: 1.6;
+            text-align: center;
         }
 
         /* Estilos del menú de navegación fijo */
         .navbar {
-            position: fixed; /* Hace que el menú se quede fijo */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -36,7 +35,7 @@
         }
 
         .navbar a {
-            color: white;
+            color: #8A2BE2; /* Enlaces y iconos en violeta */
             text-decoration: none;
             padding: 10px 15px;
             font-weight: bold;
@@ -55,13 +54,13 @@
         /* Estilos de las secciones */
         .section {
             padding: 60px 20px;
-            min-height: 80vh; /* Altura para poder hacer scroll */
+            min-height: 80vh;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-
+        
         #vision {
             background-color: #fff;
         }
@@ -69,176 +68,9 @@
         #mision {
             background-color: #e2e2e2;
         }
-
-        #carrito-section {
-            background-color: #fff;
-        }
-
-        h1, h2 {
-            margin-bottom: 20px;
-            font-size: 2.5em;
-        }
-
-        p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Estilos del botón de WhatsApp flotante */
-        .whatsapp-button {
-            position: fixed; /* Lo mantiene en un lugar fijo */
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2em;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-            z-index: 1000;
-        }
-
-        .whatsapp-button:hover {
-            transform: scale(1.1); /* Efecto de crecimiento al pasar el cursor */
-        }
         
-        /* Estilos del carrito de compras */
-        .cart-container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .product-item {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            width: 250px;
-        }
-
-        .product-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        .product-item h3 {
-            margin: 10px 0;
-        }
-
-        .product-item button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .product-item button:hover {
-            background-color: #0056b3;
-        }
-
-        .cart-summary {
-            margin-top: 30px;
-            padding: 20px;
-            border-top: 2px solid #ddd;
-        }
-        .cart-summary h3 {
-            font-size: 1.5em;
-        }
-        .cart-summary button {
-            background-color: #28a745;
-            color: white;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .cart-summary button:hover {
-            background-color: #218838;
-        }
-    </style>
-</head>
-<body>
-
-    <nav class="navbar">
-        <div class="logo">Irendoral</div>
-        <div>
-            <a href="#vision">Visión</a>
-            <a href="#mision">Misión</a>
-            <a href="#carrito-section">Carrito</a>
-        </div>
-    </nav><h3>Trasforma esta navidad </h3>
-
-    <section id="vision" class="section">
-        <h2>Nuestra Visión</h2>
-        <p>Ser la empresa líder en soluciones de decoracion  transformando la vida de nuestros clientes y contribuyendo al desarrollo sostenible de la sociedad.</p>
-    </section>
-
-    <section id="mision" class="section">
-        <h2>Nuestra Misión</h2>
-        <p>Ofrecer productos y servicios de alta calidad, superando las expectativas de nuestros clientes a través de la excelencia operativa y el compromiso con la innovación constante.</p>
-    </section>
-
-    <section id="carrito-section" class="section">
-        <h2>Carrito de Compras</h2>
-        <e': 'appcation/json
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo a {
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .main-nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .main-nav a {
-            text-decoration: none;
-            color: #555;
-            font-weight: bold;
-        }
-
         .hero-image {
-            background-image: url('https://via.placeholder.com/1200x400?text=Tienda+en+L%C3%ADnea');
+            background-image: url('https://via.placeholder.com/1200x400?text=Transforma+esta+navidad');
             background-size: cover;
             background-position: center;
             height: 400px;
@@ -254,6 +86,7 @@
             font-size: 3rem;
         }
 
+        /* Contenedor principal para productos y carrito */
         .container {
             display: flex;
             gap: 2rem;
@@ -261,7 +94,7 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
+        
         .product-grid {
             flex: 3;
             display: grid;
@@ -356,47 +189,100 @@
             font-size: 1.2rem;
         }
 
+        /* Estilos del botón de WhatsApp flotante */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #8A2BE2; /* Violeta */
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
             }
         }
     </style>
+</head>
+<body>
 
-               
-       
-
+    <nav class="navbar">
+        <div class="logo">Irendoral</div>
+        <div>
+            <a href="#vision">Visión</a>
+            <a href="#mision">Misión</a>
+            <a href="#carrito-section">Carrito</a>
+        </div>
+    </nav>
+    
     <div class="hero-image">
-        <h1>¡Descubre Nuestros Productos!</h1>
+        <h1>Transforma esta navidad</h1>
     </div>
 
-    <main class="container">
-        <section id="products" class="product-grid">
-            <div class="product-item">
-                <img src="https://via.placeholder.com/300x200" alt="Producto 1">
-                <h3>Nombre del Producto 1</h3>
-                <p class="price">$70.000
-                </p>
-                <button class="add-to-cart-btn" data-id="1" data-name="Producto 1" data-price="19.99">Añadir al carrito</button>
-            </div>
-            <div class="product-item">
-                <img src="https://via.placeholder.com/300x200" alt="Producto 2">
-                <h3>Nombre del Producto 2</h3>
-                <p class="price">$99.000</p>
-                <button class="add-to-cart-btn" data-id="2" data-name="Producto 2" data-price="29.50">Añadir al carrito</button>
-            </div>
-            </section>
+    <section id="vision" class="section">
+        <h2>Nuestra Visión</h2>
+        <p>Ser la empresa líder en soluciones de decoración, transformando la vida de nuestros clientes y contribuyendo al desarrollo sostenible de la sociedad.</p>
+    </section>
 
-        <aside id="cart" class="cart">
-            <h2>🛒 Carrito de Compras</h2>
-            <ul id="cart-items">
-                </ul>
-            <div class="cart-total">
-                <strong>Total:</strong> <span id="total-price">$0.00</span>
-            </div>
-            <button class="checkout-btn">Pagar</button>
-        </aside>
-    </main>
+    <section id="mision" class="section">
+        <h2>Nuestra Misión</h2>
+        <p>Ofrecer productos y servicios de alta calidad, superando las expectativas de nuestros clientes a través de la excelencia operativa y el compromiso con la innovación constante.</p>
+    </section>
+
+    <section id="carrito-section" class="section">
+        <h2>Carrito de Compras</h2>
+        <div class="container">
+            <section id="products" class="product-grid">
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/300x200" alt="Producto 1">
+                    <h3>Producto 1</h3>
+                    <p class="price">$70.000</p>
+                    <button class="add-to-cart-btn" data-id="1" data-name="Producto 1" data-price="70000">Añadir al carrito</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/300x200" alt="Producto 2">
+                    <h3>Producto 2</h3>
+                    <p class="price">$99.000</p>
+                    <button class="add-to-cart-btn" data-id="2" data-name="Producto 2" data-price="99000">Añadir al carrito</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/300x200" alt="Producto 3">
+                    <h3>Producto 3</h3>
+                    <p class="price">$50.000</p>
+                    <button class="add-to-cart-btn" data-id="3" data-name="Producto 3" data-price="50000">Añadir al carrito</button>
+                </div>
+            </section>
+            
+            <aside id="cart" class="cart">
+                <h2>🛒 Carrito</h2>
+                <ul id="cart-items">
+                    </ul>
+                <div class="cart-total">
+                    <strong>Total:</strong> <span id="total-price">$0.00</span>
+                </div>
+                <button class="checkout-btn">Pagar</button>
+            </aside>
+        </div>
+    </section>
+
+    <a href="https://wa.me/numerodetelefono" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -405,24 +291,26 @@
             const totalPriceSpan = document.getElementById('total-price');
             let cart = [];
 
+            // Función para actualizar el carrito en el HTML
             function updateCart() {
-                cartItemsList.innerHTML = '';
+                cartItemsList.innerHTML = ''; // Limpiar la lista del carrito
                 let total = 0;
 
                 cart.forEach(item => {
                     const li = document.createElement('li');
                     li.innerHTML = `
                         <span>${item.name} (${item.quantity})</span>
-                        <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                        <span>$${(item.price * item.quantity).toLocaleString('es-CO')}</span>
                         <button class="remove-item" data-id="${item.id}">❌</button>
                     `;
                     cartItemsList.appendChild(li);
                     total += item.price * item.quantity;
                 });
 
-                totalPriceSpan.textContent = `$${total.toFixed(2)}`;
+                totalPriceSpan.textContent = `$${total.toLocaleString('es-CO')}`;
             }
 
+            // Manejar el clic en los botones "Añadir al carrito"
             productGrid.addEventListener('click', (e) => {
                 if (e.target.classList.contains('add-to-cart-btn')) {
                     const productId = parseInt(e.target.dataset.id);
@@ -445,6 +333,7 @@
                 }
             });
 
+            // Manejar el clic en el botón "Remover" del carrito
             cartItemsList.addEventListener('click', (e) => {
                 if (e.target.classList.contains('remove-item')) {
                     const productId = parseInt(e.target.dataset.id);
@@ -455,6 +344,4 @@
         });
     </script>
 </body>
-</html>
-
 </html>
