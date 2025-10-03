@@ -6,20 +6,24 @@
     <title>HANI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="logo2.jpg">
-    
+
     <style>
-        /* Estilos generales de la página */
+        /*
+            Estilos Generales
+        */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding-top: 100px; /* Aumenta el espacio para el logo y el menú */
-            background-color: #E0F7E6; /* Fondo verde claro */
+            padding-top: 100px;
+            background-color: #E0F7E6;
             color: #333;
             line-height: 1.6;
             text-align: center;
         }
 
-        /* Contenedor del logo y el título */
+        /*
+            Encabezado
+        */
         .header {
             position: fixed;
             top: 0;
@@ -31,7 +35,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             z-index: 1000;
         }
-        
+
         .logo {
             font-size: 1.5em;
             font-weight: bold;
@@ -39,28 +43,29 @@
             padding-bottom: 10px;
         }
 
-        /* Estilos del menú de navegación */
+        /*
+            Menú de navegación
+        */
         .navbar {
-            background-color: #87CEFA; /* Nuevo fondo para el menú */
+            background-color: #87CEFA;
             padding: 10px 20px;
             display: flex;
-            justify-content: flex-start; /* Alinea los elementos a la izquierda */
+            justify-content: flex-start;
             align-items: center;
             width: 100%;
-            border: 2px solid black; /* Borde sólido de 2px */
-            border-radius: 15px 0 0 15px; /* Radio de borde solo en la parte izquierda */
-              padding-right:25%
-
+            border: 2px solid black;
+            border-radius: 15px 0 0 15px;
+            padding-right: 25%;
+            box-sizing: border-box;
         }
-        
-        /* Contenedor para los enlaces del menú */
+
         .navbar-links {
             display: flex;
-            gap: 15px; /* Espacio entre los enlaces */
+            gap: 15px;
         }
 
         .navbar-links a {
-            color: black; /* Color de los iconos y enlaces en negro */
+            color: black;
             text-decoration: none;
             padding: 10px 15px;
             font-weight: bold;
@@ -68,28 +73,13 @@
         }
 
         .navbar-links a:hover {
-            background-color: #ADD8E6; /* Azul más claro al pasar el cursor */
+            background-color: #ADD8E6;
             border-radius: 5px;
         }
 
-        /* Estilos de las secciones */
-        .section {
-            padding: 60px 20px;
-            min-height: 80vh;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        #vision {
-            background-color: #F7DED0; /* Color café claro y mandarina */
-        }
-
-        #mision {
-            background-color: #e2e2e2;
-        }
-        
+        /*
+            Hero Banner
+        */
         .hero-image {
             background-image: url('https://via.placeholder.com/1200x400?text=Transforma+esta+navidad');
             background-size: cover;
@@ -107,7 +97,29 @@
             font-size: 3rem;
         }
 
-        /* Contenedor principal para productos y carrito */
+        /*
+            Secciones de contenido
+        */
+        .section {
+            padding: 60px 20px;
+            min-height: 80vh;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #vision {
+            background-color: #F7DED0;
+        }
+
+        #mision {
+            background-color: #e2e2e2;
+        }
+
+        /*
+            Sección de Carrito y Productos
+        */
         .container {
             display: flex;
             gap: 2rem;
@@ -115,7 +127,7 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .product-grid {
             flex: 3;
             display: grid;
@@ -131,7 +143,7 @@
             text-align: center;
         }
 
-        .product-item img src="cojin.jpg" alt="> {
+        .product-item img {
             width: 100%;
             height: auto;
             border-radius: 8px;
@@ -157,6 +169,9 @@
             margin-top: 1rem;
         }
 
+        /*
+            Carrito de compras
+        */
         .cart {
             flex: 1;
             background-color: #fff;
@@ -210,12 +225,14 @@
             font-size: 1.2rem;
         }
 
-        /* Estilos del botón de WhatsApp flotante */
+        /*
+            Botón de WhatsApp flotante
+        */
         .whatsapp-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #25D366; /* Verde para el botón de WhatsApp */
+            background-color: #25D366;
             color: white;
             width: 60px;
             height: 60px;
@@ -233,11 +250,14 @@
             transform: scale(1.1);
         }
 
+        /*
+            Media Queries para hacer el diseño responsivo
+        */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
             }
-        
+        }
     </style>
 </head>
 <body>
@@ -252,7 +272,7 @@
             </div>
         </nav>
     </header>
-    
+
     <div class="hero-image">
         <h1>Transforma esta navidad</h1>
     </div>
@@ -271,101 +291,38 @@
         <h2>Carrito de Compras</h2>
         <div class="container">
             <section id="products" class="product-grid">
+                <!-- PRODUCTO 1 -->
                 <div class="product-item">
-                    <img src="ruta/a/tu/imagen.jpg" alt="Descripción de la imagen" >
-
-                    <h3>cojin</h3>
+                    <img src="cojin.jpg" alt="Cojín">
+                    <h3>Cojín</h3>
                     <p class="price">$70.000</p>
-                    <button class="add-to-cart-btn" data-id="1" data-name="Producto 1" data-price="70000">Añadir al carrito</button>
+                    <button class="add-to-cart-btn" data-id="1" data-name="Cojín" data-price="70000">Añadir al carrito</button>
                 </div>
+                <!-- PRODUCTO 2 DE EJEMPLO -->
                 <div class="product-item">
-                    <img src="https://via.placeholder.com/300x200" alt="Producto 2">
+                    <img src="otro-producto.jpg" alt="Descripción de la imagen del producto 2">
                     <h3>Producto 2</h3>
-                    <p class="price">$99.000</p>
-                    <button class="add-to-cart-btn" data-id="2" data-name="Producto 2" data-price="99000">Añadir al carrito</button>
-                </div>
-                <div class="product-item">
-                    <img src="https://via.placeholder.com/300x200" alt="Producto 3">
-                    <h3>Producto 3</h3>
                     <p class="price">$50.000</p>
-                    <button class="add-to-cart-btn" data-id="3" data-name="Producto 3" data-price="50000">Añadir al carrito</button>
+                    <button class="add-to-cart-btn" data-id="2" data-name="Producto 2" data-price="50000">Añadir al carrito</button>
                 </div>
             </section>
-            
-            <aside id="cart" class="cart">
-                <h2>🛒 Carrito</h2>
+            <aside class="cart">
+                <h3>Tu Carrito</h3>
                 <ul id="cart-items">
-                    </ul>
+                    <!-- Los productos del carrito se añadirán aquí con JavaScript -->
+                </ul>
                 <div class="cart-total">
-                    <strong>Total:</strong> <span id="total-price">$0.00</span>
+                    <strong>Total:</strong> <span id="total-price">$0</span>
                 </div>
-                <button class="checkout-btn">Pagar</button>
+                <button class="checkout-btn">Finalizar Compra</button>
             </aside>
         </div>
     </section>
 
-    <a href="https://wa.me/numerodetelefono" class="whatsapp-button" target="_blank">
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/XXXXXXXXXX" class="whatsapp-button" target="_blank" title="Contáctanos por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const productGrid = document.querySelector('.product-grid');
-            const cartItemsList = document.getElementById('cart-items');
-            const totalPriceSpan = document.getElementById('total-price');
-            let cart = [];
-
-            // Función para actualizar el carrito en el HTML
-            function updateCart() {
-                cartItemsList.innerHTML = ''; // Limpiar la lista del carrito
-                let total = 0;
-
-                cart.forEach(item => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `
-                        <span>${item.name} (${item.quantity})</span>
-                        <span>$${(item.price * item.quantity).toLocaleString('es-CO')}</span>
-                        <button class="remove-item" data-id="${item.id}">❌</button>
-                    `;
-                    cartItemsList.appendChild(li);
-                    total += item.price * item.quantity;
-                });
-
-                totalPriceSpan.textContent = `$${total.toLocaleString('es-CO')}`;
-            }
-
-            // Manejar el clic en los botones "Añadir al carrito"
-            productGrid.addEventListener('click', (e) => {
-                if (e.target.classList.contains('add-to-cart-btn')) {
-                    const productId = parseInt(e.target.dataset.id);
-                    const productName = e.target.dataset.name;
-                    const productPrice = parseFloat(e.target.dataset.price);
-
-                    const existingItem = cart.find(item => item.id === productId);
-
-                    if (existingItem) {
-                        existingItem.quantity++;
-                    } else {
-                        cart.push({
-                            id: productId,
-                            name: productName,
-                            price: productPrice,
-                            quantity: 1
-                        });
-                    }
-                    updateCart();
-                }
-            });
-
-            // Manejar el clic en el botón "Remover" del carrito
-            cartItemsList.addEventListener('click', (e) => {
-                if (e.target.classList.contains('remove-item')) {
-                    const productId = parseInt(e.target.dataset.id);
-                    cart = cart.filter(item => item.id !== productId);
-                    updateCart();
-                }
-            });
-        });
-    </script>
 </body>
 </html>
