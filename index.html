@@ -1,11 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HANI</title>
+    <title>HANI - Tu Tienda de Decoración</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="logo2.jpg">
+    <link rel="icon" type="image/png" href="logo2.jpg"> 
 
     <style>
         /*
@@ -15,7 +16,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding-top: 100px;
-            background-color: #E0F7E6;
+            background-color: #E0F7E6; /* Verde Menta Claro */
             color: #333;
             line-height: 1.6;
             text-align: center;
@@ -29,7 +30,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #ADD8E6;
+            background-color: #ADD8E6; /* Azul Claro */
             color: black;
             padding: 15px 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -47,7 +48,7 @@
             Menú de navegación
         */
         .navbar {
-            background-color: #87CEFA;
+            background-color: #87CEFA; /* Azul Cielo */
             padding: 10px 20px;
             display: flex;
             justify-content: flex-start;
@@ -81,7 +82,8 @@
             Hero Banner
         */
         .hero-image {
-            background-image: url('https://via.placeholder.com/1200x400?text=Transforma+esta+navidad');
+            /* Debes reemplazar esta URL por una imagen real */
+            background-image: url('https://via.placeholder.com/1200x400?text=Transforma+esta+navidad'); 
             background-size: cover;
             background-position: center;
             height: 400px;
@@ -110,7 +112,7 @@
         }
 
         #vision {
-            background-color: #F7DED0;
+            background-color: #F7DED0; /* Melocotón Claro */
         }
 
         #mision {
@@ -147,6 +149,7 @@
             width: 100%;
             height: auto;
             border-radius: 8px;
+            /* Las imágenes cojin.jpg y otro-producto.jpg deben estar en la misma carpeta */
         }
 
         .product-item h3 {
@@ -154,19 +157,24 @@
         }
 
         .product-item .price {
-            color: #e67e22;
+            color: #e67e22; /* Naranja */
             font-weight: bold;
             font-size: 1.25rem;
         }
 
         .add-to-cart-btn {
-            background-color: #3498db;
+            background-color: #3498db; /* Azul */
             color: white;
             border: none;
             padding: 0.75rem 1.5rem;
             border-radius: 5px;
             cursor: pointer;
             margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #2980b9;
         }
 
         /*
@@ -180,7 +188,7 @@
             padding: 1.5rem;
             height: fit-content;
             position: sticky;
-            top: 2rem;
+            top: 120px; /* Ajustar por debajo del header fijo */
         }
 
         #cart-items {
@@ -189,25 +197,29 @@
             border-top: 1px solid #eee;
             margin-top: 1rem;
             padding-top: 1rem;
+            text-align: left;
         }
 
         #cart-items li {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dotted #eee;
         }
 
         .cart-total {
-            border-top: 1px solid #eee;
+            border-top: 2px solid #ccc;
             padding-top: 1rem;
             margin-top: 1rem;
             font-size: 1.2rem;
+            font-weight: bold;
         }
 
         .checkout-btn {
             width: 100%;
-            background-color: #2ecc71;
+            background-color: #2ecc71; /* Verde esmeralda */
             color: white;
             border: none;
             padding: 1rem;
@@ -215,6 +227,11 @@
             cursor: pointer;
             margin-top: 1rem;
             font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .checkout-btn:hover {
+            background-color: #27ae60;
         }
 
         .remove-item {
@@ -223,6 +240,13 @@
             color: red;
             cursor: pointer;
             font-size: 1.2rem;
+            margin-left: 10px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .remove-item:hover {
+            opacity: 1;
         }
 
         /*
@@ -257,6 +281,10 @@
             .container {
                 flex-direction: column;
             }
+            .cart {
+                position: static; /* Desactivar sticky en móviles */
+                margin-top: 2rem;
+            }
         }
     </style>
 </head>
@@ -288,28 +316,32 @@
     </section>
 
     <section id="carrito-section" class="section">
-        <h2>Carrito de Compras</h2>
+        <h2>Productos y Carrito de Compras</h2>
         <div class="container">
             <section id="products" class="product-grid">
-                <!-- PRODUCTO 1 -->
                 <div class="product-item">
-                    <img src="cojin.jpg" alt="Cojín">
+                    <img src="cojin.jpg" alt="Cojín Decorativo"> 
                     <h3>Cojín</h3>
                     <p class="price">$70.000</p>
                     <button class="add-to-cart-btn" data-id="1" data-name="Cojín" data-price="70000">Añadir al carrito</button>
                 </div>
-                <!-- PRODUCTO 2 DE EJEMPLO -->
                 <div class="product-item">
-                    <img src="otro-producto.jpg" alt="Descripción de la imagen del producto 2">
-                    <h3>Producto 2</h3>
+                    <img src="otro-producto.jpg" alt="Vela Aromática"> 
+                    <h3>Vela Aromática</h3>
                     <p class="price">$50.000</p>
-                    <button class="add-to-cart-btn" data-id="2" data-name="Producto 2" data-price="50000">Añadir al carrito</button>
+                    <button class="add-to-cart-btn" data-id="2" data-name="Vela Aromática" data-price="50000">Añadir al carrito</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/250x250?text=Guirnalda" alt="Guirnalda">
+                    <h3>Guirnalda Navideña</h3>
+                    <p class="price">$120.000</p>
+                    <button class="add-to-cart-btn" data-id="3" data-name="Guirnalda Navideña" data-price="120000">Añadir al carrito</button>
                 </div>
             </section>
             <aside class="cart">
                 <h3>Tu Carrito</h3>
                 <ul id="cart-items">
-                    <!-- Los productos del carrito se añadirán aquí con JavaScript -->
+                    <li>El carrito está vacío.</li>
                 </ul>
                 <div class="cart-total">
                     <strong>Total:</strong> <span id="total-price">$0</span>
@@ -319,11 +351,183 @@
         </div>
     </section>
 
-    <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/XXXXXXXXXX" class="whatsapp-button" target="_blank" title="Contáctanos por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <script>
+        // Referencias a los elementos del DOM
+        const productGrid = document.getElementById('products');
+        const cartItemsList = document.getElementById('cart-items');
+        const totalPriceSpan = document.getElementById('total-price');
+        const checkoutBtn = document.querySelector('.checkout-btn');
+        const whatsappButton = document.querySelector('.whatsapp-button');
+
+        // Inicializar el carrito desde localStorage o un array vacío
+        // Esto permite que el carrito se mantenga si el usuario recarga la página
+        let cart = JSON.parse(localStorage.getItem('haniCart')) || [];
+
+        // Función para guardar el carrito en localStorage
+        function saveCart() {
+            localStorage.setItem('haniCart', JSON.stringify(cart));
+        }
+
+        // Función para formatear el precio a la moneda local (COP - Pesos Colombianos)
+        function formatPrice(price) {
+            // Se usa 'es-CO' para formato de moneda colombiana, si es otro país, cambiar el 'CO'
+            return price.toLocaleString('es-CO', { 
+                style: 'currency',
+                currency: 'COP',
+                minimumFractionDigits: 0
+            });
+        }
+
+        // Función principal para actualizar la visualización del carrito y el total
+        function updateCartDisplay() {
+            // Limpiar la lista actual
+            cartItemsList.innerHTML = '';
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = '<li>El carrito está vacío.</li>';
+            }
+
+            // Recorrer los ítems del carrito
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span>${item.name} (x${item.quantity})</span>
+                    <span>${formatPrice(item.price * item.quantity)}
+                        <button class="remove-item" data-id="${item.id}" title="Eliminar uno">
+                            &times;
+                        </button>
+                    </span>
+                `;
+                cartItemsList.appendChild(li);
+
+                // Calcular el total
+                total += item.price * item.quantity;
+            });
+
+            // Actualizar el precio total
+            totalPriceSpan.textContent = formatPrice(total);
+
+            // Guardar la versión actualizada del carrito en localStorage
+            saveCart();
+        }
+
+        // Función para añadir un producto al carrito
+        function addToCart(productId, productName, productPrice) {
+            const id = parseInt(productId);
+            const price = parseInt(productPrice);
+
+            // Buscar si el producto ya existe
+            const existingItem = cart.find(item => item.id === id);
+
+            if (existingItem) {
+                // Si existe, aumentar la cantidad
+                existingItem.quantity += 1;
+            } else {
+                // Si no existe, añadirlo con cantidad 1
+                cart.push({
+                    id: id,
+                    name: productName,
+                    price: price,
+                    quantity: 1
+                });
+            }
+            
+            alert(`¡"${productName}" añadido al carrito!`);
+            updateCartDisplay();
+        }
+
+        // Función para remover una unidad del producto del carrito
+        function removeFromCart(productId) {
+            const id = parseInt(productId);
+            const itemIndex = cart.findIndex(item => item.id === id);
+
+            if (itemIndex > -1) {
+                // Disminuir la cantidad
+                cart[itemIndex].quantity -= 1;
+
+                if (cart[itemIndex].quantity <= 0) {
+                    // Si la cantidad llega a 0, eliminar el ítem del array
+                    cart.splice(itemIndex, 1);
+                }
+            }
+            updateCartDisplay();
+        }
+
+        // --- Manejo de Eventos ---
+
+        // 1. Evento para añadir productos (en la cuadrícula de productos)
+        productGrid.addEventListener('click', (e) => {
+            if (e.target.classList.contains('add-to-cart-btn')) {
+                const btn = e.target;
+                const id = btn.dataset.id;
+                const name = btn.dataset.name;
+                const price = btn.dataset.price;
+                addToCart(id, name, price);
+            }
+        });
+
+        // 2. Evento para eliminar productos (en la lista del carrito)
+        cartItemsList.addEventListener('click', (e) => {
+            if (e.target.classList.contains('remove-item')) {
+                const btn = e.target;
+                const id = btn.dataset.id;
+                removeFromCart(id);
+            }
+        });
+        
+        // 3. Evento para "Finalizar Compra" (Checkout por WhatsApp)
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert("Tu carrito está vacío. ¡Añade algunos productos primero!");
+                return;
+            }
+            
+            const confirmation = confirm("¿Estás seguro de que quieres finalizar la compra y generar el pedido por WhatsApp?");
+            
+            if (confirmation) {
+                // Construir el mensaje para enviar por WhatsApp
+                let orderSummary = "¡Hola! He generado un pedido en la web HANI. Aquí están los detalles:\n\n";
+                let totalOrder = 0;
+                
+                cart.forEach(item => {
+                    orderSummary += `- ${item.name} (x${item.quantity}) - ${formatPrice(item.price * item.quantity)}\n`;
+                    totalOrder += item.price * item.quantity;
+                });
+                
+                orderSummary += `\nTotal: ${formatPrice(totalOrder)}`;
+                
+                // Obtener el número de teléfono del botón de WhatsApp
+                const whatsappHref = whatsappButton.getAttribute('href');
+                
+                // Construir la URL de WhatsApp con el pedido pre-llenado
+                const newWhatsappLink = `${whatsappHref}?text=${encodeURIComponent(orderSummary)}`;
+                
+                window.open(newWhatsappLink, '_blank'); // Abrir WhatsApp
+                
+                // Vaciar el carrito después de generar el pedido
+                cart = [];
+                updateCartDisplay();
+                alert("¡Pedido generado! Revisa tu chat de WhatsApp para enviar el mensaje y completar la compra.");
+            }
+        });
+
+        // Cargar el carrito al iniciar la página
+        updateCartDisplay();
+    </script>
+
 </body>
 </html>
-yv6 tv1
+
+🛑 Pasos Importantes Antes de Usar:
+ * Reemplaza el Número de WhatsApp:
+   En la línea que tiene el botón de WhatsApp, cambia las XXXXXXXXXX por tu número de teléfono, incluyendo el código de país (sin el signo +).
+   <a href="https://wa.me/XXXXXXXXXX" class="whatsapp-button" ...>
+
+ * Imágenes:
+   Asegúrate de tener los archivos logo2.jpg, cojin.jpg y otro-producto.jpg en la misma carpeta que tu archivo index.html, o reemplaza las rutas (src="...") por las URLs correctas de tus imágenes.
+
